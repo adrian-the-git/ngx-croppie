@@ -1,6 +1,6 @@
 import { NgxCroppieModule } from './ngx-croppie';
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewEncapsulation, OnInit, ViewChild, ElementRef } from '@angular/core';
-import * as Croppie from 'croppie';
+import * as Croppie from 'croppie/croppie';
 
 @Component({
     selector: 'ngx-croppie',
