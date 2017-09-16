@@ -1,7 +1,6 @@
 import { NgxCroppieModule } from './ngx-croppie';
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewEncapsulation, OnInit, ViewChild, ElementRef } from '@angular/core';
-import Croppie from 'croppie';
-import { CroppieOptions } from 'croppie';
+import * as Croppie from 'croppie';
 
 @Component({
     selector: 'ngx-croppie',
@@ -9,7 +8,7 @@ import { CroppieOptions } from 'croppie';
 })
 export class NgxCroppieComponent implements OnInit {
     @ViewChild('imageEdit') imageEdit: ElementRef;
-    @Input() croppieOptions: CroppieOptions;
+    @Input() croppieOptions: any;
     @Input() imageUrl: string;
     @Input() bind: (img: string) => void;
     @Output() result: EventEmitter<string> = new EventEmitter<string>();
