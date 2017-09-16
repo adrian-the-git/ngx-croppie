@@ -24,10 +24,22 @@ export class NgxCroppieComponent implements OnInit {
             this._croppie.bind({ url: this.imageUrl });
         }
     }
-
+    ngOnDestroy() {
+        this._croppie.destroy();
+    }
+    get() {
+        return this._croppie.get();
+    }
+    rotate(degrees: number) {
+        this._croppie.rotate(degrees);
+    }
+    setZoom(value: number) {
+        this._croppie.setZoom(value);
+    }
     newResult() {
         this._croppie.result({ type: 'base64', size: 'viewport' }).then((res) => {
             this.result.emit(res);
         });
     }
+
 }
